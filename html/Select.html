@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    // 获取select选中的值
+    jQuery("#select1  option:selected").text();
+
+    // jquery如何获取select的所有值
+    $("option").each(function() {    
+        var  v =  $(this).val(); //这句获取当前遍历到的option的值
+            
+        $("body").append(v);
+    })
+
+    // jquery如何获取select的长度(option的个数)
+    	// query获取Select的option个数有两种方法：
+		    // 1. dom方式获取option长度：
+		    $("#selectType")[0].options.length;
+		    // 2. 利用层级选择器获取option长度
+		    $("#selectType option").length
+    </script>
+</body>
+
+</html>

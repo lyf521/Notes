@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    // 遍历表格
+    $("#qxdatatable tr input[type=checkbox]").each(function() {
+        if (this.checked) {
+            tempid = tempid + $(this).parent().find(".xulieid").val() + ";";
+        }
+    });
+
+    $("#mydatatable tbody tr").each(function() {
+        if ($(this).find("input[type=checkbox]").is(':checked')) {
+            txdid = txdid + $(this).find(".checkbox").val() + ";";
+        }
+    });
+
+    // 多选框只能选一个
+    $('#test').find('input[type=checkbox]').bind('click', function() {
+        $('#test').find('input[type=checkbox]').not(this).attr("checked", false);
+    });
+    $('#test input[type=checkbox]').bind('click', function() {
+        $('#test input[type=checkbox]').not(this).attr("checked", false);
+    });
+
+    // 全选和全部取消
+    // 全选
+    $("#bt_fanwei_all").click(function() {
+        $(".xulieid").prop("checked", true);
+    });
+    //全部取消
+    $("#bt_fanwei_clear").click(function() {
+        $(".xulieid").prop("checked", false);
+    });
+
+    // 双击tr取值
+    $("#qxdatatable").on("dblclick", "tr", function() {
+        $("#Mulu").val($(this).find(".bh").html() + " " + $(this).find(".mc").html());
+        $("#muluxuhao").val($(this).find("input[type=checkbox]").val());
+        $("#pl_Fanwei").hide();
+    });
+
+    // 单击tr给多选框打钩
+    // 单击tr打钩
+    $("#table_data").on("click", "tr", function(e) {
+        if (e.target.tagName == "TD" || e.target.tagName == "SPAN") {
+            if ($(this).find("input[type=checkbox]").is(':checked')) {
+                $(this).find(":checkbox").prop("checked", false);
+            } else {
+                $("#table_data input[type=checkbox]").prop("checked", false);
+                $(this).find(":checkbox").prop("checked", true);
+            }
+        }
+    });
+    // 设置checked属性的时候，只能用prop，用attr的话，会出现打钩-不打钩只能打2次的情况，在点击不反应。
+
+    // 判断checkbox是否选中。
+    // 方法一：
+    if ($("#checkbox-id").get(0).checked) {    // do something
+    }
+    // 方法二：
+    if ($('#checkbox-id').is(':checked')) {    // do something
+    }
+    // 方法三：
+    if ($('#checkbox-id').attr('checked')) {    // do something
+    }
+    </script>
+</body>
+
+</html>

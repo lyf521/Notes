@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    //用连接符“+”把要拼接的字符串连起来
+    //这种方法最常用，但是有个不好的就是 常常会因为少写或者多写引号而出错，而且这种出错不易察觉。
+    var arr = ['今天', '昨天', '明天'];
+    $('<div class="show">' +
+        '<ul class="app">' +
+        '<li>' + arr[0] + '</li>' +
+        '<li>' + arr[1] + '</li>' +
+        '<li>' + arr[2] + '</li>' +
+        '</ul>' +
+        '</div>'
+    ).appendTo('.str');
+
+    //以数组作为中介用 join 拼接字符串
+    var str = '';
+    str += ['<div class="show">',
+        '<ul>',
+        '<li><a href="">' + arr[0] + '</a></li>',
+        '<li><a href="">' + arr[1] + '</a></li>',
+        '<li><a href="">' + arr[2] + '</a></li>',
+        '</ul>',
+        '</div>'
+    ].join('');
+    $('.str').append(str);
+
+    //通过转义斜线 \   拼接
+    //每一行的最后，都加上转义斜线\，但没有后续字符，只有个\
+    var dataList = '<div id="box">\
+	<ul class="LearnList">\
+	<li class="list">HTML</li>\
+	<li class="list">CSS</li>\
+	<li class="list">JS</li>\
+	<li class="list">NODE</li>\
+	<li class="list">ANGLUAR</li>\
+	<li class="list">JSON</li>\
+	</ul>\
+	</div>';
+    </script>
+</body>
+
+</html>

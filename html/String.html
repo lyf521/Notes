@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    //检测字符串长度是否符合要求
+    String.prototype.checkLen = function(minLen, maxLen) {
+        if (this.length <= maxLen && this.length >= minLen) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //****匹配大小写英文、数字、下划线
+    String.prototype.isRealAccount = function() {
+        return /\W/.test(this) ? false : true;
+    }
+
+    //****密码必须包含：大小写字母、数字、以及特殊符号
+    String.prototype.isReal = function() {
+        return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/.test(this);
+    }
+
+    //***校验手机号码：必须以数字开头，除数字外，可含有“-”
+    String.prototype.isMobile = function() {
+        return /^1[34578]\d{9}$/.test(this);
+    }
+    </script>
+</body>
+
+</html>

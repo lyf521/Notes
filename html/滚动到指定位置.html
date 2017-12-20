@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var box1 = $('#indexScreen1').height();
+    var box2 = $('#indexScreen2').height();
+    $('.toptool ul a').each(function(val) {
+        $(this).click(function() {
+            switch (val) {
+                case 0:
+                    $("html,body").animate({ scrollTop: 0 }, 500);
+                    break;
+                case 1:
+                    $("html,body").animate({ scrollTop: box1 }, 500);
+                    break;
+                default:
+                    $("html,body").animate({ scrollTop: box1 + box2 }, 500);
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

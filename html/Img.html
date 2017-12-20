@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="http://www.baidu.com" style="margin:10px;display: block" onclick="fn();return false;">切换</a>
+    <img id="img" src="image/1.jpg" width="400px" />
+    <script type="text/javascript">
+    var a = document.getElementsByTagName("a")[0];
+    var img = document.getElementById("img");
+    //2.绑定事件
+    a.onclick = function() {
+        //3.书写事件驱动程序
+        img.src = "image/2.jpg";
+        //return false的目的是禁止a连接跳转；
+        return false;
+    }
+    </script>
+</body>
+
+</html>

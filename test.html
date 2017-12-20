@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>text</title>
+    <!--<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>-->
+</head>
+
+<body>
+    <script type="text/javascript">
+
+//    $(document).ready(function() {
+//        setInterval("showTime()", 1000);
+//    });
+//
+//    function showTime() {
+//        var nowTime = new Date();
+//        var hours = nowTime.getHours();
+//        var minutes = nowTime.getMinutes();
+//        var seconds = nowTime.getSeconds();
+//
+//        var time0 = (hours > 12) ? "PM" : "AM";
+//        var time1 = (hours > 12) ? "0" + (hours - 12) : hours;
+//        var time2 = (minutes < 10) ? "0" + minutes : minutes;
+//        var time3 = (seconds < 10) ? "0" + seconds : seconds;
+//        $("body").html(time0 + " " + time1 + ":" + time2 + ":" + time3);
+//    }
+        var a = 5;
+        function fn() {
+            var a = 1;
+            return function () {
+                return a;
+            }
+        }
+        var a = 3;
+//        (function () {
+//            var a = 10;
+//            fn()();
+//            var a= 7;
+//        })()
+var a = fn()();
+console.log(a);
+    </script>
+    <!--<script type="text/javascript" src="js/test.js"></script>-->
+</body>
+
+</html>
